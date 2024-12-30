@@ -8,12 +8,12 @@ const routes: Routes = [
     component: ClientesPage, // Componente principal
     children: [
       {
-        path: 'cliente',
+        path: ':id/cliente',
         loadComponent: () =>
           import('./cliente/cliente.page').then((m) => m.ClientePage),
       },
       {
-        path: 'receta',
+        path: ':id/receta',
         loadComponent: () =>
           import('./receta/receta.page').then((m) => m.RecetaPage),
       },

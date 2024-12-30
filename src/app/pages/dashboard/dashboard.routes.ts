@@ -25,11 +25,6 @@ const dashboardChildRoutes: Routes = [
     path: 'venta',
     loadComponent: () => import('./venta/venta.page').then((m) => m.VentaPage),
   },
-  {
-    path: '',
-    redirectTo: 'clientes',
-    pathMatch: 'full', // Redirige a clientes por defecto
-  },
 ];
 
 @NgModule({
