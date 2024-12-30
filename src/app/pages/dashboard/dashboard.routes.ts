@@ -12,8 +12,8 @@ const dashboardChildRoutes: Routes = [
   {
     path: 'contabilidad',
     loadComponent: () =>
-      import('./contabilidad/contabilidad.page').then(
-        (m) => m.ContabilidadPage
+      import('./contabilidad/contabilidad.module').then(
+        (m) => m.ContabilidadModule
       ),
   },
   {
