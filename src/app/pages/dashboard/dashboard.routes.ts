@@ -1,5 +1,4 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ClientesPage } from './clientes/clientes.page';
 import { NgModule } from '@angular/core';
 
 const dashboardChildRoutes: Routes = [
@@ -11,7 +10,7 @@ const dashboardChildRoutes: Routes = [
 
   {
     path: 'contabilidad',
-    loadComponent: () =>
+    loadChildren: () =>
       import('./contabilidad/contabilidad.module').then(
         (m) => m.ContabilidadModule
       ),
