@@ -7,6 +7,11 @@ export const routes: Routes = [
       import('./pages/login/login.page').then((m) => m.LoginPage),
   },
   {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.page').then((m) => m.DashboardPage),
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
