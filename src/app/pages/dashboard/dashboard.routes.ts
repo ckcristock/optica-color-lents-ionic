@@ -4,26 +4,23 @@ export const dashboardChildRoutes: Routes = [
   {
     path: 'clientes',
     loadComponent: () =>
-      import('./pages/clientes/clientes.page').then((m) => m.ClientesPage),
+      import('./clientes/clientes.page').then((m) => m.ClientesPage),
   },
   {
     path: 'contabilidad',
     loadComponent: () =>
-      import('./pages/contabilidad/contabilidad.page').then(
+      import('./contabilidad/contabilidad.page').then(
         (m) => m.ContabilidadPage
       ),
   },
   {
     path: 'inventario',
     loadComponent: () =>
-      import('./pages/inventario/inventario.page').then(
-        (m) => m.InventarioPage
-      ),
+      import('./inventario/inventario.page').then((m) => m.InventarioPage),
   },
   {
-    path: 'ventas',
-    loadComponent: () =>
-      import('./pages/ventas/ventas.page').then((m) => m.VentasPage),
+    path: 'venta',
+    loadComponent: () => import('./venta/venta.page').then((m) => m.VentaPage),
   },
   {
     path: '',
