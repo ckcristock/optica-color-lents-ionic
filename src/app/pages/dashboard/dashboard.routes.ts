@@ -1,11 +1,14 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ClientesPage } from './clientes/clientes.page';
+import { NgModule } from '@angular/core';
 
-export const dashboardChildRoutes: Routes = [
+const dashboardChildRoutes: Routes = [
   {
     path: 'clientes',
-    loadComponent: () =>
-      import('./clientes/clientes.page').then((m) => m.ClientesPage),
+    loadChildren: () =>
+      import('./clientes/clientes.module').then((m) => m.ClientesModule),
   },
+
   {
     path: 'contabilidad',
     loadComponent: () =>
@@ -28,3 +31,9 @@ export const dashboardChildRoutes: Routes = [
     pathMatch: 'full', // Redirige a clientes por defecto
   },
 ];
+
+@NgModule({
+  imports: [RouterModule.forChild(dashboardChildRoutes)],
+  exports: [RouterModule],
+})
+export class DashboardRoutingModule {}

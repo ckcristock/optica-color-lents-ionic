@@ -10,6 +10,15 @@ export const routes: Routes = [
     path: 'dashboard',
     loadComponent: () =>
       import('./pages/dashboard/dashboard.page').then((m) => m.DashboardPage),
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./pages/dashboard/dashboard.routes').then(
+            (m) => m.DashboardRoutingModule
+          ),
+      },
+    ],
   },
   {
     path: '',
