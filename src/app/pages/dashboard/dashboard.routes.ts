@@ -18,7 +18,7 @@ const dashboardChildRoutes: Routes = [
   },
   {
     path: 'inventario',
-    loadComponent: () =>
+    loadChildren: () =>
       import('./inventario/inventario.module').then((m) => m.InventarioModule),
   },
   {
